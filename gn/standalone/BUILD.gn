@@ -215,9 +215,10 @@ config("default") {
     assert(current_cpu == "x64" || current_cpu == "x86")
   } else if (current_cpu == "arm") {
     cflags += [
-      "-march=armv7-a",
-      "-mfpu=neon",
-      "-mthumb",
+#      "-march=armv7-a",
+#      "-mfpu=neon",
+#      "-mthumb",
+       "-Wno-error",
     ]
   } else if (current_cpu == "x86") {
     asmflags += [ "-m32" ]
